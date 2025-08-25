@@ -67,10 +67,6 @@ if ($idModalidad && $idGrado && $idSeccion) {
 <body>
 <header>
     <a href="Principal.php">REGRESAR</a>
-<<<<<<< HEAD
-=======
-    <a href="ListadoAlumnos.php">LISTADO</a>
->>>>>>> 4546245ddf28199869c5676dabcee512aadfff6e
 </header>
 
   <h2>Consultar Horario</h2>
@@ -133,8 +129,6 @@ if ($idModalidad && $idGrado && $idSeccion) {
     <p><b>No hay horarios cargados para esta combinación.</b></p>
   <?php endif; ?>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 4546245ddf28199869c5676dabcee512aadfff6e
+
+
