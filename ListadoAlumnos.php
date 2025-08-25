@@ -114,6 +114,21 @@ document.getElementById("buscar").addEventListener("keyup", function() {
     xhr.send();
 });
 
+function eliminarAlumno(id) {
+    if (confirm("¿Seguro que deseas eliminar este alumno?")) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "EliminarAlumno.php?id=" + id, true);
+        xhr.onload = function() {
+            if (this.status === 200) {
+                alert(this.responseText);
+                // refrescar tabla automáticamente
+                document.getElementById("buscar").dispatchEvent(new Event("keyup"));
+            }
+        };
+        xhr.send();
+    }
+}
+
 </script>
 
 </body>

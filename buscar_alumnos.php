@@ -53,7 +53,7 @@ if ($result->num_rows > 0) {
                 <td>{$row['fecha_registro']}</td>
                 <td class='acciones'>
                     <a href='EditarAlumno.php?id={$row['id_alumno']}'>Editar</a>
-                    <a href='EliminarAlumno.php?id={$row['id_alumno']}' onclick=\"return confirm('¿Seguro que deseas eliminar este alumno?');\">Borrar</a>
+                    <a href='#' onclick='eliminarAlumno(".$row['id_alumno'].")'>Borrar</a>
                 </td>
               </tr>";
     }
