@@ -143,6 +143,20 @@
             </div>
         </a>
 
+
+        <!-- Card Horarios -->
+        <a href="Horario.php" class="card-link">
+            <div class="card" data-title="HORARIOS">
+                <div class="card-header">
+                    HORARIOS
+                    <span>📅</span>
+                </div>
+                <div class="card-content">
+                    <p>VER HORARIOS</p>
+                </div>
+            </div>
+        </a>
+
     </div>
 
     <script>
