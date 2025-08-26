@@ -52,9 +52,11 @@ if ($result->num_rows > 0) {
                 <td>{$row['anio']}</td>
                 <td>{$row['fecha_registro']}</td>
                 <td class='acciones'>
-                    <a href='EditarAlumno.php?id={$row['id_alumno']}'>Editar</a>
-                    <a href='#' onclick='eliminarAlumno(".$row['id_alumno'].")'>Borrar</a>
+                <a href='EditarAlumno.php?id=" . $row['id_alumno'] . "' class='btn-editar'>Editar</a>
+                <a href='#' onclick='eliminarAlumno(" . $row['id_alumno'] . ")' class='btn-borrar'>Borrar</a>
                 </td>
+
+
               </tr>";
     }
 } else {

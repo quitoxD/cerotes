@@ -12,11 +12,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #fff;
+            background: #2d5876ff;
         }
 
         header {
-            border: 1px solid #e74c3c;
+            border: 1px solid #D2C1B6;;
+            background: #D2C1B6;;
+            color: black;
             padding: 10px;
             text-align: center;
             font-size: 24px;
@@ -46,10 +48,11 @@
         .search-container input {
             padding: 10px;
             width: 300px;
+            color: black;
             border-radius: 6px;
-            border: 1px solid #ccc;
+            border: 1px solid #eadcd4ff;
             font-size: 16px;
-            background: #eee;
+            background: #eadcd4ff;
         }
 
         .cards-container {
@@ -60,7 +63,6 @@
         }
 
         .card {
-            border: 1px solid black;
             width: 300px;
             text-align: left;
             cursor: pointer;
@@ -74,6 +76,8 @@
 
         .card-header {
             display: flex;
+            background: #D2C1B6;;
+            color: black;
             justify-content: space-between;
             align-items: center;
             padding: 12px;
@@ -82,7 +86,7 @@
         }
 
         .card-content {
-            background: #464646ff;
+            background: #456882;
             color: white;
             padding: 20px;
             height: 150px;
@@ -101,9 +105,6 @@
     </style>
 </head>
 <body>
-
-    <div class="profile">👤</div>
-
     <header>
         Principal
     </header>
@@ -120,7 +121,7 @@
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     REGISTRO DE DOCENTES
-                    <span>📅</span>
+                    <span></span>
                 </div>
                 <div class="card-content">
                     <p>REGISTRAR, EDITAR Y ELIMINAR</p>
@@ -134,7 +135,7 @@
             <div class="card" data-title="REGISTRO DE ALUMNOS">
                 <div class="card-header">
                     REGISTRO DE ALUMNOS
-                    <span>📅</span>
+                    <span></span>
                 </div>
                 <div class="card-content">
                     <p>REGISTRAR, EDITAR Y ELIMINAR</p>
@@ -149,7 +150,7 @@
             <div class="card" data-title="HORARIOS">
                 <div class="card-header">
                     HORARIOS
-                    <span>📅</span>
+                    <span></span>
                 </div>
                 <div class="card-content">
                     <p>VER HORARIOS</p>

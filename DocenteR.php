@@ -7,7 +7,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #fff;
+            background: #2d5876ff;
         }
         /* Barra superior */
         .top-bar {
@@ -15,24 +15,24 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: #fff;
-            border-bottom: 2px solid red;
+            background: #D2C1B6;
+            border-bottom: 2px #D2C1B6 ;
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 10px;
             box-sizing: border-box;
             z-index: 1000;
         }
         .top-bar button {
             padding: 8px 15px;
-            border: 1px solid #999;
-            background: #eee;
+            border: 1px solid #888583ff;
+            background: #ece1daff;
             cursor: pointer;
             font-weight: bold;
             letter-spacing: 2px;
         }
         .top-bar button:hover {
-            background: #ddd;
+            background: #ece1daff;
         }
         /* Contenido principal */
         .form-container {
@@ -41,6 +41,7 @@
         }
         h2 {
             font-size: 2rem;
+            color: white;
             font-weight: bold;
             margin-bottom: 20px;
         }
@@ -50,21 +51,23 @@
         }
         label {
             display: block;
+            color: white;
             font-size: 0.8rem;
             margin: 10px 0 5px;
         }
         input {
             width: 300px;
             padding: 10px;
-            border: 1px solid #000;
+            border: 1px solid #000000ff;
+            background: #ece1daff;
             outline: none;
             font-size: 1rem;
         }
         button[type="submit"] {
             margin-top: 20px;
             padding: 10px 30px;
-            background: #000;
-            color: #fff;
+            background: #456882;
+            color: #ffffffff;
             border: none;
             cursor: pointer;
             font-weight: bold;
@@ -73,7 +76,7 @@
             margin-right: auto;
         }
         button[type="submit"]:hover {
-            background: #333;
+            background: #3f5a6fff;
         }
     </style>
 </head>

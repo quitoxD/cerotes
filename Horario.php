@@ -40,24 +40,25 @@ if ($idModalidad && $idGrado && $idSeccion) {
   <meta charset="UTF-8">
   <title>Horario de Clases</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:20px; }
-    h2 { color:#333; }
-    table { border-collapse: collapse; width:100%; margin-top:15px; }
-    th, td { border:1px solid #ddd; padding:8px; text-align:center; }
-    th { background:#f4f4f4; }
-    tr:nth-child(even) { background:#fafafa; }
-    select { padding:5px; margin:5px; }
-    button { padding:6px 12px; }
+    body { font-family: Arial, sans-serif; margin:0px; padding: 0; background-color: #2d5876ff; color: white; }
+    h2 { color:white; }
+    table { border-collapse: collapse; width:100%; margin-top:15px; background-color: #ccc; color:black; }
+    th, td { border:1px solid #e6dbd7ff; padding:8px; text-align:center; }
+    th { background: #d5c1bbff; }
+    tr:nth-child(even) { background: #e2d6d2ff; }
+    select { padding:5px; margin:5px; background-color: #eadcd4ff; color: black; }
+    button { padding:6px 12px; background-color: #456882; color: white; }
 
             header {
             display: flex;
             justify-content: space-between;
             padding: 10px 20px;
-            border: 1px solid red;
+            border: 1px #D2C1B6;
+            background-color: #D2C1B6;
         }
         header a {
             text-decoration: none;
-            background: #eaeaea;
+            background: #ece1daff;
             padding: 8px 15px;
             border: 1px solid #aaa;
             color: black;

@@ -20,25 +20,28 @@ if ($conn->connect_error) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            background: #fff;
+            margin: 0;
+            padding: 0;
+            background: #2d5876ff;
             text-align: center;
         }
         header {
             display: flex;
             justify-content: space-between;
+            background: #D2C1B6;
             padding: 10px 20px;
-            border: 1px solid red;
+            border: 1px #D2C1B6;
         }
         header a {
             text-decoration: none;
-            background: #eceaea;
+            background: #ece1daff;
             padding: 8px 15px;
-            border: 1px solid #000;
+            border: 1px solid #aaa;
             color: black;
         }
         h1 {
             margin: 20px 0;
+            color: white;
         }
         form.buscar {
             margin: 20px auto;
@@ -50,6 +53,7 @@ if ($conn->connect_error) {
             padding: 8px;
             width: 250px;
             border: 1px solid #000;
+            background-color: #eadcd4ff;
         }
         table {
             width: 100%;
@@ -60,23 +64,40 @@ if ($conn->connect_error) {
             border: 1px solid black;
         }
         th {
-            background: black;
-            color: white;
+            background: #d5c1bbff;
+            color: black;
             padding: 10px;
         }
         td {
             padding: 8px;
+            background-color: #e6dbd7ff;
         }
-        .acciones a {
+
+        /* BOTONES */
+        .btn-editar {
             margin: 0 5px;
             padding: 5px 10px;
             text-decoration: none;
-            background: #ddd;
+            background: #bad5deff;   /* Verde */
             border: 1px solid #000;
             color: black;
+            border-radius: 4px;
         }
-        .acciones a:hover {
-            background: #bbb;
+        .btn-editar:hover {
+            background: #bad5deff;
+        }
+
+        .btn-borrar {
+            margin: 0 5px;
+            padding: 5px 10px;
+            text-decoration: none;
+            background: #c98a8aff;   /* Rojo */
+            border: 1px solid #000;
+            color: black;
+            border-radius: 4px;
+        }
+        .btn-borrar:hover {
+            background: #c98a8aff;
         }
     </style>
 </head>
@@ -128,7 +149,6 @@ function eliminarAlumno(id) {
         xhr.send();
     }
 }
-
 </script>
 
 </body>

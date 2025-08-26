@@ -13,38 +13,40 @@ $result = $conn->query($sql);
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background: #f9f9f9;
+            background: #2d5876ff;
         }
         /* Barra superior */
         .top-bar {
-            border: 1px solid red;
+            border: 1px #D2C1B6;;
             padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #fff;
+            background: #D2C1B6;
         }
         .top-bar a {
             padding: 10px 15px;
-            background: #e6e6e6;
+            background: #ece1daff;
             border: 1px solid #000;
             text-decoration: none;
+            font-size: 13px;
             color: #000;
             font-weight: bold;
         }
         .top-bar a:hover {
-            background: #d4d4d4;
+            background: #ece1daff;
         }
 
         h2 {
             text-align: center;
             margin-top: 20px;
+            color: white;
         }
         table {
             width: 80%;
             margin: auto;
             border-collapse: collapse;
-            background: #fff;
+            background: #e2d6d2ff;
         }
         th, td {
             padding: 10px;
@@ -52,11 +54,11 @@ $result = $conn->query($sql);
             text-align: center;
         }
         th {
-            background: #000;
-            color: #fff;
+            background: #d5c1bbff;
+            color: #000000ff;
         }
         tr:nth-child(even) {
-            background: #f2f2f2;
+            background: #e6dbd7ff;
         }
         .btn {
             padding: 6px 12px;
@@ -67,7 +69,7 @@ $result = $conn->query($sql);
             border-radius: 4px;
         }
         .btn-edit {
-            background: #bbb;
+            background: #bad5deff;
             border: 1px solid #000;
             color: #000000ff;
         }
@@ -75,7 +77,7 @@ $result = $conn->query($sql);
             background: #bbb;
         }
         .btn-delete {
-            background: #bbb;
+            background: #c98a8aff;
             border: 1px solid #000;
             color: #000000ff;
         }

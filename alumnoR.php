@@ -50,7 +50,7 @@ $conn->close();
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #fff;
+            background: #2d5876ff;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -58,12 +58,13 @@ $conn->close();
         header {
             display: flex;
             justify-content: space-between;
+            background: #D2C1B6;
             padding: 10px 20px;
-            border: 1px solid red;
+            border: 1px #D2C1B6;
         }
         header a {
             text-decoration: none;
-            background: #eaeaea;
+            background: #ece1daff;
             padding: 8px 15px;
             border: 1px solid #aaa;
             color: black;
@@ -71,6 +72,7 @@ $conn->close();
         h1 {
             margin: 40px 0;
             font-size: 32px;
+            color: white;
         }
         form {
             display: grid;
@@ -80,6 +82,7 @@ $conn->close();
             align-items: center;
             max-width: 700px;
             margin: auto;
+            color: white;
         }
         label {
             display: block;
@@ -91,7 +94,8 @@ $conn->close();
             width: 100%;
             padding: 8px;
             border: 1px solid black;
-            justify-self: start;     
+            justify-self: start;  
+            background-color: #ece1daff;   
         }
         .full {
             grid-column: span 2;
@@ -99,14 +103,14 @@ $conn->close();
         button {
             margin-top: 30px;
             padding: 10px 25px;
-            background: black;
+            background: #456882;
             color: white;
             border: none;
             cursor: pointer;
             font-weight: bold;
         }
         button:hover {
-            background: #333;
+            background: #3f5a6fff;
         }
     </style>
 </head>
