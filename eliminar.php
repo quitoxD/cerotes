@@ -1,3 +1,4 @@
+<?php include("autologin.php"); ?>
 <?php
 include "db.php";
 

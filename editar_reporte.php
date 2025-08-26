@@ -1,3 +1,4 @@
+<?php include("autologin.php"); ?>
 <?php
 $conexion = new mysqli("localhost", "root", "", "sistema_reportes");
 if ($conexion->connect_error) {

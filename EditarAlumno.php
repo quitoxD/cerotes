@@ -1,3 +1,4 @@
+<?php include("autologin.php"); ?>
 <?php
 // EditarAlumno.php
 

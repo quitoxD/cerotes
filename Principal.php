@@ -1,3 +1,4 @@
+<?php include("autologin.php"); ?>
 <?php
 // index.php
 ?>
@@ -107,6 +108,8 @@
 <body>
     <header>
         Principal
+        
+<a href="logout.php">Cerrar Sesión</a>
     </header>
 
     <div class="search-container">
