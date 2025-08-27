@@ -17,13 +17,34 @@
         }
 
         header {
-            border: 1px solid #D2C1B6;;
-            background: #D2C1B6;;
+            border: 1px solid #D2C1B6;
+            background: #D2C1B6;
             color: black;
             padding: 10px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            position: relative;
+        }
+
+        /* Botón cerrar sesión arriba a la derecha */
+        .logout-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f4e6df;
+            border: 1px solid black;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+        }
+
+        .logout-btn:hover {
+            background: #e0d0c6;
         }
 
         .profile {
@@ -77,7 +98,7 @@
 
         .card-header {
             display: flex;
-            background: #D2C1B6;;
+            background: #D2C1B6;
             color: black;
             justify-content: space-between;
             align-items: center;
@@ -108,12 +129,10 @@
 <body>
     <header>
         Principal
-        
-<a href="logout.php">Cerrar Sesión</a>
+        <a href="logout.php" class="logout-btn">Cerrar Sesión</a>
     </header>
 
     <div class="search-container">
-        <!-- Ahora sin el "ej: Registro de Docentes" -->
         <input type="text" id="searchInput" placeholder="Search">
     </div>
 
@@ -147,7 +166,6 @@
             </div>
         </a>
 
-
         <!-- Card Horarios -->
         <a href="Horario.php" class="card-link">
             <div class="card" data-title="HORARIOS">
@@ -167,7 +185,6 @@
         const searchInput = document.getElementById("searchInput");
         const cards = document.querySelectorAll(".card");
 
-        // Evento al presionar Enter
         searchInput.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 const searchValue = searchInput.value.trim().toUpperCase();
@@ -177,10 +194,10 @@
                 cards.forEach(card => {
                     const title = card.getAttribute("data-title");
                     if (title.includes(searchValue) || searchValue === "") {
-                        card.parentElement.style.display = "block"; // Mostrar
+                        card.parentElement.style.display = "block"; 
                         found = true;
                     } else {
-                        card.parentElement.style.display = "none"; // Ocultar
+                        card.parentElement.style.display = "none"; 
                     }
                 });
 
