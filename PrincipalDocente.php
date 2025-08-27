@@ -1,4 +1,5 @@
 <?php include("autologin.php"); ?>
+<<<<<<< HEAD
 <?php
 // index.php
 ?>
@@ -279,3 +280,7 @@
 
 </body>
 </html>
+=======
+
+<a href="logout.php">Cerrar Sesión</a>
+>>>>>>> 5af17133d138f4afa5caf5a00ab78e8822c0ce3c

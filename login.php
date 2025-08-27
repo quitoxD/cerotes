@@ -1,8 +1,18 @@
 <?php
 session_start();
-if (isset($_SESSION['usuario'])) {
-    header("Location: Principal.php");
-    exit();
+
+if (isset($_SESSION['usuario']) && isset($_SESSION['rol'])) {
+    $rol = strtolower(trim($_SESSION['rol']));
+
+    if ($rol === "director") {
+        header("Location: Principal.php");
+        exit();
+    } elseif ($rol === "docente") {
+        header("Location: PrincipalDocente.php");
+        exit();
+    } else {
+        echo "Rol no válido: " . htmlspecialchars($_SESSION['rol']);
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -18,6 +28,7 @@ if (isset($_SESSION['usuario'])) {
             padding: 0;
         }
 
+<<<<<<< HEAD
         .top-bar {
             background-color: #d9c7bc; /* beige */
             padding: 25px;
@@ -108,3 +119,16 @@ if (isset($_SESSION['usuario'])) {
 
 </body>
 </html>
+=======
+
+<form method="post" action="procesar_login.php">
+    <label>Usuario:</label>
+    <input type="text" name="username" required>
+    <label>Contraseña:</label>
+    <input type="password" name="password" required>
+    <label>
+        <input type="checkbox" name="recordar"> Mantener sesión iniciada
+    </label>
+    <button type="submit">Iniciar Sesión</button>
+</form>
+>>>>>>> 5af17133d138f4afa5caf5a00ab78e8822c0ce3c
