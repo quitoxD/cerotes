@@ -1,6 +1,6 @@
 <?php include("autologin.php"); ?>
 <?php
-$conexion = new mysqli("localhost", "root", "", "sistema_reportes");
+$conexion = new mysqli("localhost", "root", "", "escuela");
 
 if ($conexion->connect_error) {
     die("<p class='error'>❌ Error de conexión: " . $conexion->connect_error . "</p>");

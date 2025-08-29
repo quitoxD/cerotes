@@ -2,119 +2,121 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Registro de Reporte</title>
+  <title>Registrar Reporte</title>
   <style>
+    /* General */
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
+      background-color: #275878; /* Fondo azul principal */
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Barra superior */
+    .navbar {
+      background-color: #d9c9bf; /* Color beige */
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      background-color: #ece1da;
+      border: 1px solid #333;
+      padding: 8px 18px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .navbar a:hover {
+      background-color: #c8b9af;
+    }
+
+    /* Contenedor central */
+    .container {
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
     }
 
-    .container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-      width: 350px;
+    .form-box {
       text-align: center;
+      width: 350px;
     }
 
+    /* Título */
     h2 {
-      margin-bottom: 20px;
-      color: #2c3e50;
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #fff;
+      text-transform: lowercase;
     }
 
+    /* Labels */
     label {
       display: block;
       text-align: left;
-      margin-bottom: 5px;
+      margin: 8px 0 5px;
+      font-size: 12px;
       font-weight: bold;
-      color: #34495e;
+      color: #fff;
     }
 
+    /* Inputs y textarea */
     input, textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      border: 1px solid #000;
+      background-color: #f2e6df;
       font-size: 14px;
       outline: none;
-      transition: border-color 0.3s;
+      resize: none;
     }
 
-    input:focus, textarea:focus {
-      border-color: #2980b9;
-    }
-
+    /* Botón principal */
     button {
-      background: #2980b9;
+      background-color: #3d6587;
       color: #fff;
       border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
+      padding: 10px 25px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 16px;
       transition: background 0.3s;
-      width: 100%;
     }
 
     button:hover {
-      background: #1f6391;
-    }
-
-    .mensaje {
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .success {
-      color: green;
-    }
-
-    .error {
-      color: red;
+      background-color: #27475c;
     }
   </style>
-  
-
-<style>
-  .btn-ver {
-    display: inline-block;
-    background: #2980b9;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    margin: 25px 0px;
-  }
-  .btn-ver:hover {
-    background: #1f6391;
-  }
-</style>
-
 </head>
 <body>
+  <!-- Barra superior -->
+  <div class="navbar">
+    <a href="PrincipalDocente.php">REGRESAR</a>
+    <a href="ver_reportes.php">LISTADO</a>
+  </div>
+
+  <!-- Contenido central -->
   <div class="container">
-    <h2>Registrar Reporte</h2>
-    <form action="guardar_reporte.php" method="POST">
-      <label for="titulo">Título</label>
-      <input type="text" id="titulo" name="titulo" placeholder="Escribe el título" required>
+    <div class="form-box">
+      <h2>Registrar Reporte</h2>
+      <form action="guardar_reporte.php" method="POST">
+        <label for="titulo">NOMBRE</label>
+        <input type="text" id="titulo" name="titulo" required>
 
-      <label for="descripcion">Descripción</label>
-      <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escribe la descripción" required></textarea>
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
-      <button type="submit">Guardar</button>
-    </form>
-       <div>
-    <a href="ver_reportes.php" class="btn-ver">📑 Ver Reportes</a>
-   </div>
+        <button type="submit">Ingresar</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>

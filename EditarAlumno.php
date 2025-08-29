@@ -73,6 +73,7 @@ $conn->close();
             display: flex;
             justify-content: space-between;
             background: #D2C1B6;
+            height: 30px;
             padding: 10px 20px;
             border: 1px #D2C1B6;
         }
@@ -113,30 +114,39 @@ $conn->close();
         }
         .full {
             grid-column: span 2;
-        }
-        .button-container {
-            grid-column: span 2;
             text-align: center;
         }
-        button {
-            margin-top: 30px;
-            padding: 10px 25px;
-            background: #456882;
-            color: white;
+
+        .button-group {
+            display: flex;
+            gap: 15px; /* espacio entre botones */
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        button, .btn-cancelar {
+            background-color: #456882;
+            color: #fff;
+            font-weight: bold;
+            padding: 14px 0;
+            width: 160px;
             border: none;
             cursor: pointer;
-            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
         }
-        button:hover {
-            background: #3f5a6fff;
-        }
+
+        button:hover, .btn-cancelar:hover {
+            background-color: #2c4657;
+         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="ListadoAlumnos.php">LISTADO</a>
-    <a href="Principal.php">INICIO</a>
 </header>
 
 <h1>Editar Alumno</h1>
@@ -193,9 +203,11 @@ $conn->close();
 
     <div></div>
 
-    <div class="button-container">
-        <button type="submit">Actualizar</button>
+    <div class="button-group full">
+      <button type="submit" name="actualizar">Actualizar</button>
+     <a href="ListadoAlumnos.php" class="btn-cancelar">Cancelar</a>
     </div>
+
 </form>
 
 </body>

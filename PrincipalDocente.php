@@ -1,5 +1,4 @@
 <?php include("autologin.php"); ?>
-<<<<<<< HEAD
 <?php
 // index.php
 ?>
@@ -143,7 +142,7 @@
     <div class="cards-container">
 
         <!-- Card Docentes -->
-        <a href="DocenteR.php" class="card-link">
+        <a href="Modalidades/Aduana.php" class="card-link">
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     ADUANA
@@ -157,7 +156,7 @@
         </a>
 
         <!-- Card Alumnos -->
-        <a href="AlumnoR.php" class="card-link">
+        <a href="Modalidades/Contador.php" class="card-link">
             <div class="card" data-title="REGISTRO DE ALUMNOS">
                 <div class="card-header">
                     CONTADOR
@@ -171,7 +170,7 @@
         </a>
 
         <!-- Card Horarios -->
-        <a href="Horario.php" class="card-link">
+        <a href="Modalidades/General.php" class="card-link">
             <div class="card" data-title="HORARIOS">
                 <div class="card-header">
                     GENERAL
@@ -183,7 +182,7 @@
             </div>
         </a>
 
-        <a href="DocenteR.php" class="card-link">
+        <a href="Modalidades/Infraestructura.php" class="card-link">
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     INFRAESTRUCTURA
@@ -196,20 +195,7 @@
             </div>
         </a>
 
-        <a href="DocenteR.php" class="card-link">
-            <div class="card" data-title="REGISTRO DE DOCENTES">
-                <div class="card-header">
-                    Turismo
-                    <span></span>
-                </div>
-                <div class="card-content">
-                    <p>REGISTRAR, EDITAR Y ELIMINAR</p>
-                    <p>LISTADO DE DOCENTES</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="DocenteR.php" class="card-link">
+        <a href="Modalidades/Software.php" class="card-link">
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     SOFTWARE
@@ -222,7 +208,7 @@
             </div>
         </a>
             
-        <a href="DocenteR.php" class="card-link">
+        <a href="Modalidades/Salud.php" class="card-link">
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     SALUD
@@ -235,10 +221,23 @@
             </div>
         </a>
 
-        <a href="DocenteR.php" class="card-link">
+        <a href="Modalidades/Turismo.php" class="card-link">
             <div class="card" data-title="REGISTRO DE DOCENTES">
                 <div class="card-header">
                     TURISMO
+                    <span></span>
+                </div>
+                <div class="card-content">
+                    <p>REGISTRAR, EDITAR Y ELIMINAR</p>
+                    <p>LISTADO DE DOCENTES</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="reportes.html" class="card-link">
+            <div class="card" data-title="REGISTRO DE DOCENTES">
+                <div class="card-header">
+                    Reportes
                     <span></span>
                 </div>
                 <div class="card-content">
@@ -252,35 +251,37 @@
     </div>
 
     <script>
-        const searchInput = document.getElementById("searchInput");
-        const cards = document.querySelectorAll(".card");
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".card");
 
-        searchInput.addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                const searchValue = searchInput.value.trim().toUpperCase();
+    searchInput.addEventListener("input", function() {
+        const searchValue = searchInput.value.trim().toUpperCase();
+        let found = false;
 
-                let found = false;
+        cards.forEach(card => {
+            // Obtener el texto del header de cada card
+            const headerText = card.querySelector(".card-header").textContent.toUpperCase();
 
-                cards.forEach(card => {
-                    const title = card.getAttribute("data-title");
-                    if (title.includes(searchValue) || searchValue === "") {
-                        card.parentElement.style.display = "block"; 
-                        found = true;
-                    } else {
-                        card.parentElement.style.display = "none"; 
-                    }
-                });
-
-                if (!found) {
-                    alert("No se encontró el registro buscado.");
-                }
+            if (headerText.includes(searchValue) || searchValue === "") {
+                card.parentElement.style.display = "block"; 
+                found = true;
+            } else {
+                card.parentElement.style.display = "none"; 
             }
         });
-    </script>
+
+        // Mostrar alerta solo si no hay resultados
+        if (!found && searchValue !== "") {
+            // ⚠️ En vez de alert, puede ser mejor mostrar un mensaje en la página
+            console.log("No se encontró el registro buscado.");
+        }
+    });
+</script>
+
+
 
 </body>
 </html>
-=======
 
 <a href="logout.php">Cerrar Sesión</a>
->>>>>>> 5af17133d138f4afa5caf5a00ab78e8822c0ce3c
+

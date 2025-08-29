@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $conexion = new mysqli("localhost", "root", "", "escuela");
 
 // Si no hay sesión activa, pero hay cookies

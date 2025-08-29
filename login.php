@@ -28,7 +28,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['rol'])) {
             padding: 0;
         }
 
-<<<<<<< HEAD
         .top-bar {
             background-color: #d9c7bc; /* beige */
             padding: 25px;
@@ -102,26 +101,6 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['rol'])) {
 
 <div class="form-container">
     <form method="post" action="procesar_login.php">
-        <h2>Iniciar sesión</h2>
-        <label for="username">Usuario:</label>
-        <input type="text" name="username" id="username" required>
-
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" id="password" required>
-
-        <label style="color: white; font-weight: normal; text-align: left;">
-            <input type="checkbox" name="recordar"> Mantener sesión iniciada
-        </label>
-
-        <button type="submit">Iniciar Sesión</button>
-    </form>
-</div>
-
-</body>
-</html>
-=======
-
-<form method="post" action="procesar_login.php">
     <label>Usuario:</label>
     <input type="text" name="username" required>
     <label>Contraseña:</label>
@@ -131,4 +110,9 @@ if (isset($_SESSION['usuario']) && isset($_SESSION['rol'])) {
     </label>
     <button type="submit">Iniciar Sesión</button>
 </form>
->>>>>>> 5af17133d138f4afa5caf5a00ab78e8822c0ce3c
+</div>
+
+</body>
+</html>
+
+

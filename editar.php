@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $docente = $result->fetch_assoc();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     $id = $_POST["id"];
     $nombre = $_POST["nombre"];
     $correo = $_POST["correo"];
@@ -34,19 +34,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <style>
     body {
         font-family: 'Arial', sans-serif;
-        background-color: #2d5876ff;
+        background-color: #2d5876ff; /* azul */
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        color: #fff;
     }
+
+    /* Barra superior */
+    .top-bar {
+        background: #D2C1B6;
+        height: 30px;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .top-bar a {
+        background: #ece1daff;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-weight: bold;
+        border: 1px solid #999;
+    }
+
     .container {
         text-align: center;
         width: 100%;
         max-width: 400px;
+        margin: 40px auto;
     }
+
     h2 {
         font-size: 2rem;
         margin-bottom: 40px;
@@ -65,15 +84,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         font-weight: 600;
         text-align: left;
         width: 100%;
+        max-width: 300px;
         margin-bottom: 8px;
-        letter-spacing: 2px;   /* más espaciado entre letras */
+        letter-spacing: 2px;
         color: white;
     }
 
     input {
         width: 100%;
         max-width: 300px;
-        padding: 14px 12px;   /* un poco más alto */
+        padding: 14px 12px;
         margin-bottom: 25px;
         border: 1px solid #000;
         outline: none;
@@ -82,25 +102,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         background-color: #ece1daff;
     }
 
-    button {
+    /* Contenedor de botones en fila */
+    .button-group {
+        display: flex;
+        gap: 15px; /* espacio entre botones */
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    button, .btn-cancelar {
         background-color: #456882;
         color: #fff;
         font-weight: bold;
         padding: 14px 0;
-        width: 160px;  /* ancho fijo como en la imagen */
+        width: 160px;
         border: none;
         cursor: pointer;
         transition: 0.3s;
         font-size: 0.9rem;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
     }
 
-    button:hover {
-        background-color: #456882;
+    button:hover, .btn-cancelar:hover {
+        background-color: #2c4657;
     }
 </style>
 
 </head>
 <body>
+
+    <!-- Barra superior -->
+    <div class="top-bar">
+    </div>
+
     <div class="container">
         <h2>Editar Docente</h2>
         <form method="POST">
@@ -112,7 +148,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="correo">CORREO</label>
             <input type="email" id="correo" name="correo" value="<?= $docente['correo'] ?>" required>
             
-            <button type="submit">Actualizar</button>
+            <div class="button-group">
+                <button type="submit" name="actualizar">Actualizar</button>
+                <a href="listado.php" class="btn-cancelar">Cancelar</a>
+            </div>
         </form>
     </div>
 </body>

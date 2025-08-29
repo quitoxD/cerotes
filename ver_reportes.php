@@ -1,6 +1,6 @@
 <?php include("autologin.php"); ?>
 <?php
-$conexion = new mysqli("localhost", "root", "", "sistema_reportes");
+$conexion = new mysqli("localhost", "root", "", "escuela");
 
 if ($conexion->connect_error) {
     die("❌ Error de conexión: " . $conexion->connect_error);
@@ -14,115 +14,118 @@ $resultado = $conexion->query($sql);
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Lista de Reportes</title>
+  <title>Listado de Reportes</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      padding: 30px;
-    }
-
-    h2 {
+      margin: 0;
+      padding: 0;
+      background: #2d5876; /* Fondo azul */
       text-align: center;
-      margin-bottom: 20px;
-      color: #2c3e50;
     }
 
+    /* Barra superior */
+    header {
+      display: flex;
+      justify-content: space-between;
+      background: #D2C1B6;
+      padding: 10px 20px;
+      border: 1px #D2C1B6;
+    }
+    header a {
+      text-decoration: none;
+      background: #ece1da;
+      padding: 8px 15px;
+      border: 1px solid #aaa;
+      color: black;
+      font-weight: bold;
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: white;
+    }
+
+    /* Tabla */
     table {
-      width: 90%;
-      margin: auto;
+      width: 95%;
+      margin: 20px auto;
       border-collapse: collapse;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
     }
 
     th, td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
+      border: 1px solid black;
+      padding: 10px;
     }
 
     th {
-      background: #2980b9;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      background: #d5c1bb;
+      color: black;
     }
 
-    tr:hover {
-      background: #f1f1f1;
+    td {
+      background-color: #e6dbd7;
     }
 
-    .acciones a {
+    /* Botones */
+    .btn-editar {
+      margin: 0 5px;
+      padding: 5px 10px;
       text-decoration: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      margin: 0 3px;
-      font-size: 14px;
-      color: #fff;
+      background: #bad5de;  /* Azul claro */
+      border: 1px solid #000;
+      color: black;
+      border-radius: 3px;
     }
-
-    .editar {
-      background: #27ae60;
-    }
-
-    .eliminar {
-      background: #e74c3c;
-    }
-
-    .volver {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
+    .btn-borrar {
+      margin: 0 5px;
+      padding: 5px 10px;
       text-decoration: none;
-      background: #2980b9;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      width: 200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .volver:hover {
-      background: #1f6391;
+      background: #c98a8a;  /* Rojo */
+      border: 1px solid #000;
+      color: black;
+      border-radius: 3px;
     }
   </style>
 </head>
 <body>
-  <h2>📋 Lista de Reportes</h2>
-  <table>
-    <tr>
-      <th>ID</th>
-      <th>Título</th>
-      <th>Descripción</th>
-      <th>Fecha</th>
-      <th>Acciones</th>
-    </tr>
 
-    <?php
-    if ($resultado->num_rows > 0) {
-        while ($row = $resultado->fetch_assoc()) {
-            echo "<tr>
-                    <td>".$row['id']."</td>
-                    <td>".$row['titulo']."</td>
-                    <td>".$row['descripcion']."</td>
-                    <td>".$row['fecha']."</td>
-                    <td class='acciones'>
-                      <a class='editar' href='editar_reporte.php?id=".$row['id']."'>✏️ Editar</a>
-                      <a class='eliminar' href='eliminar_reporte.php?id=".$row['id']."' onclick=\"return confirm('¿Seguro que quieres eliminar este reporte?');\">🗑️ Eliminar</a>
-                    </td>
-                  </tr>";
-        }
-    } else {
-        echo "<tr><td colspan='5' style='text-align:center;'>No hay reportes registrados</td></tr>";
-    }
-    ?>
-  </table>
+<header>
+    <a href="reportes.html">NUEVO REPORTE</a>
+    <a href="PrincipalDocente.php">INICIO</a>
+</header>
 
-  <a href="reportes.html" class="volver">➕ Nuevo Reporte</a>
+<h1>Listado de Reportes</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Fecha</th>
+    <th>Acciones</th>
+  </tr>
+
+  <?php
+  if ($resultado->num_rows > 0) {
+      while ($row = $resultado->fetch_assoc()) {
+          echo "<tr>
+                  <td>".$row['id']."</td>
+                  <td>".$row['titulo']."</td>
+                  <td>".$row['descripcion']."</td>
+                  <td>".$row['fecha']."</td>
+                  <td>
+                    <a class='btn-editar' href='editar_reporte.php?id=".$row['id']."'>Editar</a>
+                    <a class='btn-borrar' href='eliminar_reporte.php?id=".$row['id']."' onclick=\"return confirm('¿Seguro que quieres eliminar este reporte?');\">Borrar</a>
+                  </td>
+                </tr>";
+      }
+  } else {
+      echo "<tr><td colspan='5'>No hay reportes registrados</td></tr>";
+  }
+  ?>
+</table>
+
 </body>
 </html>
 
